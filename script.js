@@ -24,6 +24,9 @@ function back() {
     } else if (currentOperator) {
         currentOperator = "";
         currentNumber = numbers.pop()
+        if (!currentNumber) {
+            currentNumber = "";
+        }
     }
     display.textContent = display.textContent.slice(0, display.textContent.length - 1);
 }
@@ -69,9 +72,10 @@ function clickedOp(opBtn) {
     currentOperator = opBtn.textContent;
 }
 
-// onclick="Equal()" on equal button
+// onclick="clickedEqual()" on equal button
 // TODO: Solve *, / before +, -
 function clickedEqual() {
+    console.log(numbers, operators);
     if (currentNumber) {
         numbers.push(currentNumber);
     } else {
@@ -90,7 +94,7 @@ function clickedEqual() {
 
     for (let i = 0; i < numbers.length - 1; i++) {
         if (i === 0) {
-            result = operate(operators[i], parseInt(numbers[i]), parseInt(numbers[i+1]));
+            result = operate(operators[i], parseFloat(numbers[i]), parseFloat(numbers[i+1]));
         } else {
             result = operate(operators[i], result, parseInt(numbers[i+1]));
         }
@@ -101,6 +105,20 @@ function clickedEqual() {
     currentOperator = "";
 
     display.textContent = result;
+}
+
+function clickedPlusMinus() {
+    const display = document.querySelector("#display");
+
+    if (currentNumber) {
+        if (currentNumber.split("")[0] == "-") {
+            currentNumber = currentNumber.slice(1);
+            display.textContent = display.textContent.slice(1);
+        } else {
+            currentNumber = "-" + currentNumber;
+            display.textContent = "-" + display.textContent;
+        }
+    }
 }
 
 function showError(text) {
@@ -125,9 +143,18 @@ function substract(num1, num2) {
 }
 
 function multiply(num1, num2) {
-    return num1 * num2;
+    result = num1 * num2;
+    if (result % 1 === 0) {
+        return result;
+    } else {
+        return result.toFixed(3);
+    }
 }
 
 function divide(num1, num2) {
-    return num1 / num2;
+    if (num1 % num2 === 0) {
+        return num1 / num2;
+    } else {
+        return (num1 / num2).toFixed(3);
+    }
 }

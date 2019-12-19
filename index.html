@@ -4,32 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Orbitron&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
     <title>Calculator</title>
 </head>
 <body>
     <div class="calculator">
-        <div id="display"></div>
-        <div class="calc_btn" id="num_one" onclick="clickedNum(this)">1</div>
-        <div class="calc_btn" id="num_two" onclick="clickedNum(this)">2</div>
-        <div class="calc_btn" id="num_three" onclick="clickedNum(this)">3</div>
-        <div class="calc_btn" id="num_four" onclick="clickedNum(this)">4</div>
-        <div class="calc_btn" id="num_five" onclick="clickedNum(this)">5</div>
-        <div class="calc_btn" id="num_six" onclick="clickedNum(this)">6</div>
-        <div class="calc_btn" id="num_seven" onclick="clickedNum(this)">7</div>
-        <div class="calc_btn" id="num_eight" onclick="clickedNum(this)">8</div>
-        <div class="calc_btn" id="num_nine" onclick="clickedNum(this)">9</div>
-        <div class="calc_btn" id="num_zero" onclick="clickedNum(this)">0</div>
-        <div class="calc_btn" id="op_plus" onclick="clickedOp(this)">+</div>
-        <div class="calc_btn" id="op_minus" onclick="clickedOp(this)">-</div>
-        <div class="calc_btn" id="op_multiply" onclick="clickedOp(this)">&times;</div>
-        <div class="calc_btn" id="op_divide" onclick="clickedOp(this)">&divide;</div>
-        <div class="calc_btn" id="op_equals" onclick="clickedEqual()">=</div>
-        <div class="calc_btn" id="sp_clear" onclick="clearDisplay()">AC</div>
-        <div class="calc_btn" id="sp_back" onclick="back()">BK</div>
-        <div class="calc_btn" id="num_dot" onclick="clickedNum(this)">.</div>
-        <div class="calc_btn" id="sp_plusminus" onclick="clickedPlusMinus()">&plusmn;</div>
+        <div class="noselect" id="display"></div>
+        <div class="buttons-container">
+            <div class="calc_btn noselect" id="num_seven" onclick="clickedNum(this)">7</div>
+            <div class="calc_btn noselect" id="num_eight" onclick="clickedNum(this)">8</div>
+            <div class="calc_btn noselect" id="num_nine" onclick="clickedNum(this)">9</div>
+            <div class="calc_btn noselect" id="op_divide" onclick="clickedOp(this)">&divide;</div>
+
+            <div class="calc_btn noselect" id="num_four" onclick="clickedNum(this)">4</div>
+            <div class="calc_btn noselect" id="num_five" onclick="clickedNum(this)">5</div>
+            <div class="calc_btn noselect" id="num_six" onclick="clickedNum(this)">6</div>
+            <div class="calc_btn noselect" id="op_multiply" onclick="clickedOp(this)">&times;</div>
+
+            <div class="calc_btn noselect" id="num_one" onclick="clickedNum(this)">1</div>
+            <div class="calc_btn noselect" id="num_two" onclick="clickedNum(this)">2</div>
+            <div class="calc_btn noselect" id="num_three" onclick="clickedNum(this)">3</div>
+            <div class="calc_btn noselect" id="op_minus" onclick="clickedOp(this)">-</div>
+
+            <div class="calc_btn noselect" id="num_dot" onclick="clickedNum(this)">.</div>
+            <div class="calc_btn noselect" id="num_zero" onclick="clickedNum(this)">0</div>
+            <div class="calc_btn noselect" id="sp_plusminus" onclick="clickedPlusMinus()">&plusmn;</div>
+            <div class="calc_btn noselect" id="op_plus" onclick="clickedOp(this)">+</div>
+
+            <div class="calc_btn noselect" id="sp_back" onclick="back()">&laquo;</div>
+            <div class="calc_btn noselect" id="sp_clear" onclick="clearDisplay()">AC</div>
+            <div class="calc_btn noselect" id="op_equals" onclick="clickedEqual()">=</div>
+        </div>
+
         <div id="errorDisplay"></div>
     </div>
 </body>
