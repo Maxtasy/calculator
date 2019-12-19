@@ -1,0 +1,134 @@
+*, *::BeforeUnloadEvent, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100vh;
+    background-color: #7B3034;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#display {
+    grid-area: display;
+    font-size: 32px;
+    height: 60px;
+    line-height: 60px;
+    text-align: right;
+    background-color: white;
+    margin: 8px;
+    padding: 8px;
+}
+
+#num_one {
+    grid-area: num_one;
+}
+
+#num_two {
+    grid-area: num_two;
+}
+
+#num_three {
+    grid-area: num_three;
+}
+
+#num_four {
+    grid-area: num_four;
+}
+
+#num_five {
+    grid-area: num_five;
+}
+
+#num_six {
+    grid-area: num_six;
+}
+
+#num_seven {
+    grid-area: num_seven;
+}
+
+#num_eight {
+    grid-area: num_eight;
+}
+
+#num_nine {
+    grid-area: num_nine;
+}
+
+#num_zero {
+    grid-area: num_zero;
+}
+
+#num_dot {
+    grid-area: num_dot;
+}
+
+#op_plus {
+    grid-area: op_plus;
+}
+
+#op_minus {
+    grid-area: op_minus;
+}
+
+#op_multiply {
+    grid-area: op_multiply;
+}
+
+#op_divide {
+    grid-area: op_divide;
+}
+
+#op_equals {
+    grid-area: op_equals;
+}
+
+#sp_clear {
+    grid-area: sp_clear;
+}
+
+#sp_back {
+    grid-area: sp_back;
+}
+
+#sp_plusminus {
+    grid-area: sp_plusminus;
+}
+
+.calculator {
+    background-color: #CCC;
+    display: grid;
+    grid-template-areas:
+        "display display display display"
+        "num_seven num_eight num_nine op_divide"
+        "num_four num_five num_six op_multiply"
+        "num_one num_two num_three op_minus"
+        "num_dot num_zero sp_plusminus op_plus"
+        "sp_back sp_clear op_equals op_equals";
+    justify-content: space-between;
+
+    position: relative;
+}
+
+.calc_btn {
+    width: 70px;
+    height: 70px;
+    text-align: center;
+    line-height: 70px;
+    cursor: pointer;
+}
+
+#errorDisplay {
+    font-size: 20px;
+    position: absolute;
+    visibility: hidden;
+    left: 310px;
+    top: 10px;
+    width: 200px;;
+}
