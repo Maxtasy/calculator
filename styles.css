@@ -1,45 +1,47 @@
 :root {
-    --secondary-color: #70E4D1;
-    --primary-color: #FB7317;
-    --primary-hover: #FA8E44;
+    --dark-grey: #343642;
+    --grey: #979C9C;
+    --red: #962D3E;
+    --off-white: #F2EBC7;
+    --blue: #348899;
 }
 
-*, *::BeforeUnloadEvent, *::after {
+*, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
 body {
-    color: #333;
+    color: var(--dark-grey);
     font-size: 30px;
     font-family: 'Orbitron', sans-serif;
-    height: 100vh;
-    background-color: var(--secondary-color);
+    min-height: 100vh;
+    background-color: var(--dark-grey);
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 #display {
+    flex-grow: 1;
     font-size: 38px;
     height: 60px;
-    line-height: 60px;
+    line-height: 38px;
     text-align: right;
-    background-color: #FFA76C;
+    background-color: var(--off-white);
     margin: 18px;
     padding: 8px;
-    border: 1px solid #333;
+    border: 1px solid var(--dark-grey);
     border-radius: 3px;
     position: relative;
     overflow: hidden;
-    max-width: 280px;
 }
 
 .calculator {
-    background-color: var(--primary-color);
+    background-color: var(--red);
     position: relative;
-    border: 3px solid #BE4D00;
+    border: 3px solid var(--blue);
     border-radius: 10px;
     box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.2);
 }
@@ -56,13 +58,13 @@ body {
     text-align: center;
     line-height: 70px;
     cursor: pointer;
-    border: 1px solid rgba(51, 51, 51, 0.25);
+    border: 1px solid var(--dark-grey);
     border-radius: 10px;
-    background-color: #DD5900;
+    background-color: var(--blue);
 }
 
 .calc_btn:hover {
-    background-color: var(--primary-hover);
+    background-color: var(--grey);
 }
 
 .calc_btn#op_equals {
@@ -71,7 +73,7 @@ body {
 }
 
 .calc_btn#op_equals:hover {
-    background-color: var(--primary-hover);
+    background-color: var(--grey);
 }
 
 .noselect {
@@ -85,15 +87,16 @@ body {
 }
 
 #errorDisplay {
+    color: var(--off-white);
     padding: 10px;
     font-size: 20px;
     position: absolute;
     visibility: hidden;
-    left: 368px;
-    top: 18px;
-    width: 200px;
-    background-color: var(--primary-color);
-    border: 3px solid #BE4D00;
+    left: 50%;
+    top: 50px;
+    transform: translateX(-50%);
+    background-color: var(--red);
+    border: 3px solid var(--blue);
     border-radius: 10px;
     box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.2);
 }
